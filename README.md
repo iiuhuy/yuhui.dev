@@ -1,23 +1,46 @@
-<p align="center">😆 = 🛠 </p>
-<p align="center">archived in <a href="https://github.com/AlvinMi/yuhui.dev/issues">Issues</a> </p>
+# My Person Website
 
-## JavaScript
+## Front End 
 
-## TypeScript
+use 
 
-## React
+- React
 
-## Node.js
+## Back End 
 
-## 性能优化
+use Python 
 
-## HTTP
+- Python Flask
 
-## 设计模式
+需要创建一个 Server 目录， 并且使用 Python virtual 环境进行开发。
 
-## WebGL
+`server.py` 文件可以是这样：
 
-## 工具
+```py
+from flask import Flask, render_template
 
-- [VSCode 的配置]()
-- [读物 - Blog](https://github.com/AlvinMi/yuhui.dev/issues/1)
+app = Flask(__name__, static_folder="../static/dist",
+            template_folder="../static")
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/hello")
+def hello():
+    return "Hello World !!"
+
+if __name__ == "__main__":
+    app.run()
+```
+
+```bash
+$ python server.py
+```
+
+## Usage
+
+```bash
+$ git clone git@github.com:AlvinMi/yuhui.dev.git
+$ cd yuhui.dev
+```
