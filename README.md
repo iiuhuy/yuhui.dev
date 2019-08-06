@@ -1,46 +1,31 @@
 # My Person Website
 
-## Front End 
+<p align="center"> Blog 移动到 Github issue。</p>
 
-use 
+<p align="center">archived in <a href="https://github.com/AlvinMi/yuhui.dev/issues">Issues</a> </p>
 
-- React
+## JavaScript
 
-## Back End 
+## TypeScript
 
-use Python 
+## React
 
-- Python Flask
+## Node.js
 
-需要创建一个 Server 目录， 并且使用 Python virtual 环境进行开发。
+## 性能优化
 
-`server.py` 文件可以是这样：
+## HTTP
 
-```py
-from flask import Flask, render_template
+## 设计模式
 
-app = Flask(__name__, static_folder="../static/dist",
-            template_folder="../static")
+## WebGL
 
-@app.route("/")
-def index():
-    return render_template("index.html")
+## WebAssembly
 
-@app.route("/hello")
-def hello():
-    return "Hello World !!"
+## 工具（Tools）
 
-if __name__ == "__main__":
-    app.run()
-```
+- [VSCode 的配置]()
 
-```bash
-$ python server.py
-```
+## Reading
 
-## Usage
-
-```bash
-$ git clone git@github.com:AlvinMi/yuhui.dev.git
-$ cd yuhui.dev
-```
+- [读物 - Blog](https://github.com/AlvinMi/yuhui.dev/issues/1)
