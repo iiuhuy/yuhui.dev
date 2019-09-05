@@ -2,6 +2,10 @@
 
 <p align="center">archived in <a href="https://github.com/AlvinMi/yuhui.dev/issues">Issues</a> </p>
 
+## 前端工程化
+
+- [前端自动化测试](https://github.com/AlvinMi/yuhui.dev/issues/23)
+
 ## 布局(CSS)
 
 - [布局](https://github.com/AlvinMi/yuhui.dev/issues/14)
@@ -11,6 +15,7 @@
 - [js == 和 === ？](https://github.com/AlvinMi/yuhui.dev/issues/15)
 
 ## TypeScript
+
 
 ## React
 
@@ -27,6 +32,10 @@
 ## 设计模式
 
 - [UI 设计模式]()
+
+## Chrome 
+
+- [Chrome 小技巧](https://github.com/AlvinMi/yuhui.dev/issues/24)
 
 ## WebGL
 
