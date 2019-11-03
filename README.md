@@ -33,9 +33,11 @@
 
 - [UI 设计模式]()
 
-## Chrome 
+## 浏览器 
 
-- [Chrome 小技巧](https://github.com/AlvinMi/yuhui.dev/issues/24)
+- [Chrome 技巧](https://github.com/AlvinMi/yuhui.dev/issues/24)
+- [Chrome 浏览器渲染需要知道的收集]()
+- [浏览器兼容性问题]()
 
 ## WebGL
 
