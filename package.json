@@ -6,19 +6,31 @@
   "author": "AlvinMi <alvin.mi0620@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config build/webpack.config.js --mode production",
-    "dev": "webpack-dev-server --config build/webpack.config.js --mode development --open"
+    "dev": "webpack-dev-server --config build/webpack.dev.js --mode development --open",
+    "test-build": "webpack --config build/webpack.prod.js --mode production --env test",
+    "pre-build": "webpack --config build/webpack.prod.js --mode production --env pre",
+    "prod-build": "webpack --config build/webpack.prod.js --mode production --env prod"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
+    "@babel/preset-typescript": "^7.9.0",
+    "@loadable/component": "^5.12.0",
+    "@types/loadable__component": "^5.10.0",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.7",
+    "@types/react-router-dom": "^5.1.5",
     "autoprefixer": "^9.7.6",
     "babel-loader": "^8.1.0",
+    "babel-plugin-import": "^1.13.0",
     "css-loader": "^3.5.3",
     "html-webpack-plugin": "^4.3.0",
+    "less": "^3.11.1",
+    "less-loader": "^6.0.0",
     "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.2",
@@ -29,7 +41,14 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "antd": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
+    "yargs-parser": "^18.1.3"
   }
 }

@@ -1,7 +1,7 @@
 @import "var.scss"; // webpack 配置了之后就可以直接 @import "var.scss";
 
 .app {
-  background: $red;
+  background: #FFFFFF;
   .aps {
     width: 50px;
     @include ellipsis;
