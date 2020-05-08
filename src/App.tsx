@@ -13,6 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
+        <h1>Hi I'm YuHui</h1>
         <Router>
           <ul>
             <li>
@@ -25,7 +26,6 @@ class App extends React.Component {
           <Route exact path="/" component={HomeComponent}></Route>
           <Route path="/about" component={AboutComponent}></Route>
         </Router>
-        <p className="aps">hahahaahhahhahahaha</p>
       </div>
     );
   }
