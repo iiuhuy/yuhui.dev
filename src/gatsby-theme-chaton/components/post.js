@@ -20,11 +20,13 @@ const Post = ({
   next,
 }) => {
   let tags = post.tags || []
+  console.log('post', post)
+
+  console.log('tags', tags)
 
   return (
     <Layout location={location} title={title}>
       <SEO title={post.title} description={post.excerpt} />
-
       <main>
         <Styled.h1
           css={css({

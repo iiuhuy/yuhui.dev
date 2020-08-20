@@ -1,3 +1,13 @@
+const fs = require(`fs`)
+const fetch = require(`node-fetch`)
+const { buildClientSchema } = require(`graphql`)
+// const { createHttpLink } = require(`apollo-link-http`)
+const {
+  // ApolloClient,
+  // InMemoryCache,
+  createHttpLink,
+} = require('@apollo/client')
+
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
@@ -56,60 +66,65 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-github-api`,
+      resolve: 'gatsby-plugin-apollo',
       options: {
-        url: 'https://api.github.com/graphql',
-        token: process.env.TOKEN,
-        // token: '866c1e0a5bd23b80df665b14329447b0b810096b',
-        graphQLQuery: `
-        query ($author: String = "", $userFirst: Int = 0, $searchFirst: Int = 0, $q: String = "") {
-          user(login: $author) {
-            repositories(first: $userFirst, orderBy: {field: STARGAZERS, direction: DESC}) {
-              edges {
-                node {
-                  name
-                  description
-                  url
-                  stargazers {
-                    totalCount
-                  }
-                  readme: object(expression:"master:README.md"){
-                    ... on Blob{
-                      text
-                    }
-                  }
-                }
-              }
-            }
-          }
-          search(query: $q, type: ISSUE, first: $searchFirst) {
-            edges {
-              node {
-                ... on PullRequest {
-                  title
-                  merged
-                  url
-                  state
-                  repository {
-                    stargazers {
-                      totalCount
-                    }
-                    repoUrl: url
-                    name
-                  }
-                }
-              }
-            }
-          }
-        }`,
-        variables: {
-          userFirst: 3,
-          searchFirst: 2,
-          q: 'author:ldd is:merged state:closed type:pr sort:comments',
-          author: 'ldd',
+        uri: 'https://api.github.com/graphql',
+      },
+    },
+    {
+      resolve: `gatsby-source-graphql`,
+      options: {
+        fieldName: `github`,
+        typeName: `GitHub`,
+        createLink: () => {
+          console.log('................', process.env.GITHUB_TOKEN)
+          createHttpLink({
+            uri: `https://api.github.com/graphql`,
+            headers: {
+              Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
+            },
+            fetch,
+          })
+        },
+        createSchema: async () => {
+          console.log('----------------------', __dirname)
+          const json = JSON.parse(fs.readFileSync(`${__dirname}/github.json`))
+          return buildClientSchema(json.data)
         },
       },
     },
+    // {
+    //   resolve: `gatsby-source-github-api`,
+    //   options: {
+    //     url: 'https://api.github.com/graphql',
+    //     token: process.env.GITHUB_TOKEN,
+    //     graphQLQuery: `
+    //     query () {
+    //       repository(owner: "alvinmi", name: "yuhui.dev") {
+    //         sshUrl
+    //         url
+    //         issues(first: 100, states: OPEN, labels: null) {
+    //           totalCount
+    //           edges {
+    //             node {
+    //               title
+    //               url
+    //               createdAt
+    //               updatedAt
+    //               reactions(first: 100) {
+    //                 totalCount
+    //                 nodes {
+    //                   content
+    //                 }
+    //               }
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }`,
+    //     variables: {},
+    //   },
+    // },
     // {
     //   resolve: "gatsby-plugin-antd",
     //   options: {
