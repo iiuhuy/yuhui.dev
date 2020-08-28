@@ -35,19 +35,3 @@
 // `
 
 // console.log('query', query)
-import React from 'react'
-import { graphql } from 'gatsby'
-
-const ComponentName = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
-
-export const query = graphql`
-  {
-    github {
-      repository(owner: "alvinmi", name: "yuhui.dev") {
-        sshUrl
-      }
-    }
-  }
-`
-
-export default ComponentName

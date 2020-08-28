@@ -3767,7 +3767,7 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001111:
   resolved "https://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30001114.tgz?cache=0&sync_timestamp=1597383201302&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcaniuse-lite%2Fdownload%2Fcaniuse-lite-1.0.30001114.tgz#2e88119afb332ead5eaa330e332e951b1c4bfea9"
   integrity sha1-LogRmvszLq1eqjMOMy6VGxxL/qk=
 
-case@^1.6.2:
+case@^1.2.1, case@^1.6.2:
   version "1.6.3"
   resolved "https://registry.npm.taobao.org/case/download/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
   integrity sha1-CkOG4+mCU1HKLmIWxgRn/18eock=
@@ -4585,6 +4585,14 @@ create-react-context@0.3.0:
   dependencies:
     gud "^1.0.0"
     warning "^4.0.3"
+
+cross-fetch@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/cross-fetch/download/cross-fetch-2.0.0.tgz#a17475449561e0f325146cea636a8619efb9b382"
+  integrity sha1-oXR1RJVh4PMlFGzqY2qGGe+5s4I=
+  dependencies:
+    node-fetch "2.0.0"
+    whatwg-fetch "2.0.3"
 
 cross-fetch@2.2.2:
   version "2.2.2"
@@ -6595,6 +6603,11 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
+fn-name@~1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/fn-name/download/fn-name-1.0.1.tgz#de8d8a15388b33cbf2145782171f73770c6030f0"
+  integrity sha1-3o2KFTiLM8vyFFeCFx9zdwxgMPA=
+
 fn-name@~2.0.1:
   version "2.0.1"
   resolved "https://registry.npm.taobao.org/fn-name/download/fn-name-2.0.1.tgz#5214d7537a4d06a4a301c0cc262feb84188002e7"
@@ -7214,6 +7227,15 @@ gatsby-source-github-api@^0.2.1:
   dependencies:
     graphql-fetch "^1.0.1"
     uuid "^3.1.0"
+
+gatsby-source-github@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.npm.taobao.org/gatsby-source-github/download/gatsby-source-github-0.0.2.tgz#ea15cd5e725d60d618bba84037dcf4cb40e0e564"
+  integrity sha1-6hXNXnJdYNYYu6hAN9z0y0Dg5WQ=
+  dependencies:
+    graphql-request "~1.5.1"
+    lodash "~4.17.5"
+    yup "~0.24.1"
 
 gatsby-source-graphql@^2.7.1:
   version "2.7.1"
@@ -7837,6 +7859,13 @@ graphql-request@^1.5.0:
   integrity sha1-OY0QrhXFhWdnQb3j/AHVypSPj74=
   dependencies:
     cross-fetch "2.2.2"
+
+graphql-request@~1.5.1:
+  version "1.5.2"
+  resolved "https://registry.npm.taobao.org/graphql-request/download/graphql-request-1.5.2.tgz#cf329fad59e36daf6925f41751b4ba8ad93371c3"
+  integrity sha1-zzKfrVnjba9pJfQXUbS6itkzccM=
+  dependencies:
+    cross-fetch "2.0.0"
 
 graphql-subscriptions@^1.1.0:
   version "1.1.0"
@@ -9802,7 +9831,7 @@ lodash.uniq@4.5.0, lodash.uniq@^4.5.0:
   resolved "https://registry.npm.taobao.org/lodash.uniq/download/lodash.uniq-4.5.0.tgz?cache=0&sync_timestamp=1589682817275&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flodash.uniq%2Fdownload%2Flodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.11.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
+lodash@^4.11.1, lodash@^4.15.0, lodash@^4.17.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0, lodash@~4.17.5:
   version "4.17.20"
   resolved "https://registry.npm.taobao.org/lodash/download/lodash-4.17.20.tgz?cache=0&sync_timestamp=1597335994883&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flodash%2Fdownload%2Flodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha1-tEqbYpe8tpjxxRo1RaKzs2jVnFI=
@@ -10573,6 +10602,11 @@ node-eta@^0.9.0:
   version "0.9.0"
   resolved "https://registry.npm.taobao.org/node-eta/download/node-eta-0.9.0.tgz#9fb0b099bcd2a021940e603c64254dc003d9a7a8"
   integrity sha1-n7CwmbzSoCGUDmA8ZCVNwAPZp6g=
+
+node-fetch@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/node-fetch/download/node-fetch-2.0.0.tgz?cache=0&sync_timestamp=1597048786321&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnode-fetch%2Fdownload%2Fnode-fetch-2.0.0.tgz#982bba43ecd4f2922a29cc186a6bbb0bb73fcba6"
+  integrity sha1-mCu6Q+zU8pIqKcwYamu7C7c/y6Y=
 
 node-fetch@2.1.2:
   version "2.1.2"
@@ -12113,7 +12147,7 @@ proper-lockfile@^4.1.1:
     retry "^0.12.0"
     signal-exit "^3.0.2"
 
-property-expr@^1.5.0:
+property-expr@^1.2.0, property-expr@^1.5.0:
   version "1.5.1"
   resolved "https://registry.npm.taobao.org/property-expr/download/property-expr-1.5.1.tgz#22e8706894a0c8e28d58735804f6ba3a3673314f"
   integrity sha1-IuhwaJSgyOKNWHNYBPa6OjZzMU8=
@@ -14385,6 +14419,11 @@ symbol-observable@^1.0.4, symbol-observable@^1.2.0:
   resolved "https://registry.npm.taobao.org/symbol-observable/download/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
   integrity sha1-wiaIrtTqs83C3+rLtWFmBWCgCAQ=
 
+synchronous-promise@^1.0.18:
+  version "1.0.18"
+  resolved "https://registry.npm.taobao.org/synchronous-promise/download/synchronous-promise-1.0.18.tgz#936e8763e6554088cdcf78dc64f7473b972fcefc"
+  integrity sha1-k26HY+ZVQIjNz3jcZPdHO5cvzvw=
+
 synchronous-promise@^2.0.6:
   version "2.0.13"
   resolved "https://registry.npm.taobao.org/synchronous-promise/download/synchronous-promise-2.0.13.tgz#9d8c165ddee69c5a6542862b405bc50095926702"
@@ -14665,6 +14704,11 @@ toidentifier@1.0.0:
   resolved "https://registry.npm.taobao.org/toidentifier/download/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
   integrity sha1-fhvjRw8ed5SLxD2Uo8j013UrpVM=
 
+toposort@^0.2.10:
+  version "0.2.12"
+  resolved "https://registry.npm.taobao.org/toposort/download/toposort-0.2.12.tgz#c7d2984f3d48c217315cc32d770888b779491e81"
+  integrity sha1-x9KYTz1IwhcxXMMtdwiIt3lJHoE=
+
 toposort@^2.0.2:
   version "2.0.2"
   resolved "https://registry.npm.taobao.org/toposort/download/toposort-2.0.2.tgz#ae21768175d1559d48bef35420b2f4962f09c330"
@@ -14815,6 +14859,11 @@ type-is@~1.6.17, type-is@~1.6.18:
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.24"
+
+type-name@^2.0.1:
+  version "2.0.2"
+  resolved "https://registry.npm.taobao.org/type-name/download/type-name-2.0.2.tgz#efe7d4123d8ac52afff7f40c7e4dec5266008fb4"
+  integrity sha1-7+fUEj2KxSr/9/QMfk3sUmYAj7Q=
 
 type-of@^2.0.1:
   version "2.0.1"
@@ -15636,6 +15685,11 @@ websocket-extensions@>=0.1.1:
   resolved "https://registry.npm.taobao.org/websocket-extensions/download/websocket-extensions-0.1.4.tgz#7f8473bc839dfd87608adb95d7eb075211578a42"
   integrity sha1-f4RzvIOd/YdgituV1+sHUhFXikI=
 
+whatwg-fetch@2.0.3:
+  version "2.0.3"
+  resolved "https://registry.npm.taobao.org/whatwg-fetch/download/whatwg-fetch-2.0.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fwhatwg-fetch%2Fdownload%2Fwhatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
+  integrity sha1-nITsLc9oGH/wC8ZOEnS0QhduHIQ=
+
 whatwg-fetch@2.0.4:
   version "2.0.4"
   resolved "https://registry.npm.taobao.org/whatwg-fetch/download/whatwg-fetch-2.0.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fwhatwg-fetch%2Fdownload%2Fwhatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
@@ -15983,6 +16037,19 @@ yup@^0.27.0:
     property-expr "^1.5.0"
     synchronous-promise "^2.0.6"
     toposort "^2.0.2"
+
+yup@~0.24.1:
+  version "0.24.1"
+  resolved "https://registry.npm.taobao.org/yup/download/yup-0.24.1.tgz?cache=0&sync_timestamp=1596545302205&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fyup%2Fdownload%2Fyup-0.24.1.tgz#2c8a81b5f929ef29aaf77a8b7c9acfa52ab6a7d1"
+  integrity sha1-LIqBtfkp7ymq93qLfJrPpSq2p9E=
+  dependencies:
+    case "^1.2.1"
+    fn-name "~1.0.1"
+    lodash "^4.17.0"
+    property-expr "^1.2.0"
+    synchronous-promise "^1.0.18"
+    toposort "^0.2.10"
+    type-name "^2.0.1"
 
 yurnalist@^1.1.2:
   version "1.1.2"

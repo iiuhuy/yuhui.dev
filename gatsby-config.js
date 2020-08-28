@@ -8,6 +8,16 @@ const {
   createHttpLink,
 } = require('@apollo/client')
 
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
+console.log(`Using environment config: '${activeEnv}'`)
+
+require('dotenv').config({
+  path: `.env.${activeEnv}`,
+})
+
+// console.log(`xxxxxxxxxx: '${JSON.stringify(process.env)}'`)
+
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
@@ -65,32 +75,58 @@ module.exports = {
         // googleAnalytics: 'UA-74424222-4',
       },
     },
+    // {
+    //   resolve: 'gatsby-plugin-apollo',
+    //   options: {
+    //     uri: 'https://api.github.com/graphql',
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-graphql`,
+    //   options: {
+    //     fieldName: `github`,
+    //     typeName: `GitHub`,
+    //     createLink: () => {
+    //       console.log('................', process.env.GITHUB_TOKEN)
+    //       createHttpLink({
+    //         uri: `https://api.github.com/graphql`,
+    //         headers: {
+    //           Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
+    //         },
+    //         fetch,
+    //       })
+    //     },
+    //     createSchema: async () => {
+    //       const json = JSON.parse(fs.readFileSync(`${__dirname}/github.json`))
+    //       console.log('----------------------', __dirname)
+    //       return buildClientSchema(json.data)
+    //     },
+    //   },
+    // },
     {
-      resolve: 'gatsby-plugin-apollo',
+      resolve: 'gatsby-source-github',
       options: {
-        uri: 'https://api.github.com/graphql',
-      },
-    },
-    {
-      resolve: `gatsby-source-graphql`,
-      options: {
-        fieldName: `github`,
-        typeName: `GitHub`,
-        createLink: () => {
-          console.log('................', process.env.GITHUB_TOKEN)
-          createHttpLink({
-            uri: `https://api.github.com/graphql`,
-            headers: {
-              Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
-            },
-            fetch,
-          })
+        headers: {
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         },
-        createSchema: async () => {
-          console.log('----------------------', __dirname)
-          const json = JSON.parse(fs.readFileSync(`${__dirname}/github.json`))
-          return buildClientSchema(json.data)
-        },
+        queries: [
+          `{
+            viewer {
+              pinnedItems(first: 5, types: REPOSITORY) {
+                nodes {
+                  ... on Repository {
+                    id
+                    name
+                    url
+                    description
+                    homepageUrl
+                  }
+                }
+              }
+            }
+          }
+          `,
+        ],
       },
     },
     // {

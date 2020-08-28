@@ -23,6 +23,7 @@
     "gatsby-plugin-less": "^3.0.21",
     "gatsby-plugin-material-ui": "^2.1.6",
     "gatsby-plugin-static-folders": "^1.0.1",
+    "gatsby-source-github": "^0.0.2",
     "gatsby-source-github-api": "^0.2.1",
     "gatsby-source-graphql": "^2.7.1",
     "gatsby-theme-chaton": "*",
