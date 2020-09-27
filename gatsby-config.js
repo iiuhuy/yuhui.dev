@@ -24,7 +24,7 @@ module.exports = {
     title: `Yu Hui`,
     author: `Yu Hui`,
     description: `个人博客! 文字、代码、记录工作和生活`,
-    copyright: `&copy;2014-${new Date().getFullYear()} 粤`,
+    copyright: `Copyright &copy;2017-${new Date().getFullYear()} 粤 ICP 备 2020085475 号 - 1`,
     siteUrl: `https://yushujin.com`,
     aboutUrl: `/about`,
     social: [
@@ -54,18 +54,18 @@ module.exports = {
         title: '技术',
         link: '/categories/tech/',
       },
-      {
-        title: 'life',
-        link: '/categories/life/',
-      },
+      // {
+      //   title: 'life',
+      //   link: '/categories/life/',
+      // },
       {
         title: 'reding',
         link: '/categories/reading/',
       },
-      {
-        title: 'travel',
-        link: '/categories/travel/',
-      },
+      // {
+      //   title: 'travel',
+      //   link: '/categories/travel/',
+      // },
     ],
   },
   plugins: [
@@ -81,54 +81,54 @@ module.exports = {
     //     uri: 'https://api.github.com/graphql',
     //   },
     // },
-    // {
-    //   resolve: `gatsby-source-graphql`,
-    //   options: {
-    //     fieldName: `github`,
-    //     typeName: `GitHub`,
-    //     createLink: () => {
-    //       console.log('................', process.env.GITHUB_TOKEN)
-    //       createHttpLink({
-    //         uri: `https://api.github.com/graphql`,
-    //         headers: {
-    //           Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
-    //         },
-    //         fetch,
-    //       })
-    //     },
-    //     createSchema: async () => {
-    //       const json = JSON.parse(fs.readFileSync(`${__dirname}/github.json`))
-    //       console.log('----------------------', __dirname)
-    //       return buildClientSchema(json.data)
-    //     },
-    //   },
-    // },
     {
-      resolve: 'gatsby-source-github',
+      resolve: `gatsby-source-graphql`,
       options: {
-        headers: {
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        fieldName: `github`,
+        typeName: `GitHub`,
+        createLink: () => {
+          console.log('................', process.env.GITHUB_TOKEN)
+          createHttpLink({
+            uri: `https://api.github.com/graphql`,
+            headers: {
+              Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
+            },
+            fetch,
+          })
         },
-        queries: [
-          `{
-            viewer {
-              pinnedItems(first: 5, types: REPOSITORY) {
-                nodes {
-                  ... on Repository {
-                    id
-                    name
-                    url
-                    description
-                    homepageUrl
-                  }
-                }
-              }
-            }
-          }
-          `,
-        ],
+        createSchema: async () => {
+          const json = JSON.parse(fs.readFileSync(`${__dirname}/github.json`))
+          console.log('----------------------', __dirname)
+          return buildClientSchema(json.data)
+        },
       },
     },
+    // {
+    //   resolve: 'gatsby-source-github',
+    //   options: {
+    //     headers: {
+    //       Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+    //     },
+    //     queries: [
+    //       `{
+    //         viewer {
+    //           pinnedItems(first: 5, types: REPOSITORY) {
+    //             nodes {
+    //               ... on Repository {
+    //                 id
+    //                 name
+    //                 url
+    //                 description
+    //                 homepageUrl
+    //               }
+    //             }
+    //           }
+    //         }
+    //       }
+    //       `,
+    //     ],
+    //   },
+    // },
     // {
     //   resolve: `gatsby-source-github-api`,
     //   options: {

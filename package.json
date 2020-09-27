@@ -11,7 +11,8 @@
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
-    "deploy": "gatsby build --prefix-paths && cd ./public && scp -o stricthostkeychecking=no -r ./* root@192.168.1.21:/home/yuhuiGatsby/",
+    "deploy": "gatsby build --prefix-paths && cd ./public && scp -o stricthostkeychecking=no -r ./* root@129.204.75.170:/www/yuhui.dev/",
+    "depl": "gatsby build && gh-pages -d public -b master -r https://git.avenirzheng.net/blog.git",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
   },
   "dependencies": {
