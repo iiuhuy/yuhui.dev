@@ -7,6 +7,7 @@ import SEO from 'gatsby-theme-chaton/src/components/seo'
 import Tags from 'gatsby-theme-chaton/src/components/tags'
 import { Link } from 'gatsby'
 import defaultThemeColors from 'gatsby-theme-chaton/src/gatsby-plugin-theme-ui/colors'
+import Header from 'gatsby-theme-chaton/src/components/header'
 
 const Post = ({
   data: {

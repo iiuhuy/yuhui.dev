@@ -34,4 +34,34 @@ export const query = graphql`
   }
 `
 
-console.log('query', query)
+console.log('query--------------------', query)
+
+// ================================================================================== //
+
+// import React from 'react'
+// import { graphql } from 'gatsby'
+
+// const Index = ({ data }) => (
+//   <div>
+//     <h1>My repositories {{ data }}</h1>
+//     <div>
+//       {/* {data.github.viewer.repositories.nodes.map((repository, i) => (
+//         <div key={i}>
+//           <h2>{repository.name}</h2>
+//         </div>
+//       ))} */}
+//     </div>
+//   </div>
+// )
+
+// export default Index
+
+// export const query = graphql`
+//   query RepositoriesQuery {
+//     github {
+//       repository(name: "yuhui.dev", owner: "alvinmi") {
+//         name
+//       }
+//     }
+//   }
+// `

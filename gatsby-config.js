@@ -19,7 +19,7 @@ require('dotenv').config({
 // console.log(`xxxxxxxxxx: '${JSON.stringify(process.env)}'`)
 
 module.exports = {
-  pathPrefix: '/',
+  pathPrefix: '/blog/',
   siteMetadata: {
     title: `Yu Hui`,
     author: `Yu Hui`,
@@ -47,17 +47,17 @@ module.exports = {
     ],
     nav: [
       {
-        title: 'Home',
-        link: '/',
+        title: 'blog',
+        link: '/blog/',
       },
+      // {
+      //   title: 'Home',
+      //   link: '/',
+      // },
       {
         title: '技术',
         link: '/categories/tech/',
       },
-      // {
-      //   title: 'life',
-      //   link: '/categories/life/',
-      // },
       {
         title: 'reding',
         link: '/categories/reading/',
@@ -69,10 +69,18 @@ module.exports = {
     ],
   },
   plugins: [
+    { resolve: `gatsby-plugin-sass` },
     {
       resolve: `gatsby-theme-chaton`,
       options: {
         // googleAnalytics: 'UA-74424222-4',
+      },
+    },
+    {
+      resolve: `gatsby-source-github-issue`,
+      options: {
+        owner: 'AlvinMi',
+        repo: 'yuhui.dev',
       },
     },
     // {
@@ -81,28 +89,31 @@ module.exports = {
     //     uri: 'https://api.github.com/graphql',
     //   },
     // },
-    {
-      resolve: `gatsby-source-graphql`,
-      options: {
-        fieldName: `github`,
-        typeName: `GitHub`,
-        createLink: () => {
-          console.log('................', process.env.GITHUB_TOKEN)
-          createHttpLink({
-            uri: `https://api.github.com/graphql`,
-            headers: {
-              Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
-            },
-            fetch,
-          })
-        },
-        createSchema: async () => {
-          const json = JSON.parse(fs.readFileSync(`${__dirname}/github.json`))
-          console.log('----------------------', __dirname)
-          return buildClientSchema(json.data)
-        },
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-graphql`,
+    //   options: {
+    //     fieldName: `github`,
+    //     typeName: `GitHub`,
+    //     createLink: () => {
+    //       console.log('................', process.env.GITHUB_TOKEN)
+    //       createHttpLink({
+    //         uri: `https://api.github.com/graphql`,
+    //         headers: {
+    //           Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
+    //         },
+    //         fetch,
+    //       })
+    //     },
+    //     createSchema: async () => {
+    //       const json = JSON.parse(fs.readFileSync(`${__dirname}/github.json`))
+    //       console.log('----------------------', __dirname)
+    //       // console.log(JSON.stringify(json.data))
+    //       console.log(json.data)
+
+    //       return buildClientSchema(json.data)
+    //     },
+    //   },
+    // },
     // {
     //   resolve: 'gatsby-source-github',
     //   options: {
@@ -135,29 +146,29 @@ module.exports = {
     //     url: 'https://api.github.com/graphql',
     //     token: process.env.GITHUB_TOKEN,
     //     graphQLQuery: `
-    //     query () {
-    //       repository(owner: "alvinmi", name: "yuhui.dev") {
-    //         sshUrl
-    //         url
-    //         issues(first: 100, states: OPEN, labels: null) {
-    //           totalCount
-    //           edges {
-    //             node {
-    //               title
-    //               url
-    //               createdAt
-    //               updatedAt
-    //               reactions(first: 100) {
-    //                 totalCount
-    //                 nodes {
-    //                   content
+    //       query () {
+    //         repository(owner: "alvinmi", name: "yuhui.dev") {
+    //           sshUrl
+    //           url
+    //           issues(first: 100, states: OPEN, labels: null) {
+    //             totalCount
+    //             edges {
+    //               node {
+    //                 title
+    //                 url
+    //                 createdAt
+    //                 updatedAt
+    //                 reactions(first: 100) {
+    //                   totalCount
+    //                   nodes {
+    //                     content
+    //                   }
     //                 }
     //               }
     //             }
     //           }
     //         }
-    //       }
-    //     }`,
+    //       }`,
     //     variables: {},
     //   },
     // },

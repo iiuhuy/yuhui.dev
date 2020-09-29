@@ -6,6 +6,7 @@
   "author": "alvinmi <alvin.mi0620@gmail.com>",
   "scripts": {
     "dev": "gatsby develop --port 8000",
+    "playground": "GATSBY_GRAPHQL_IDE=playground gatsby develop --port 8000",
     "start": "gatsby serve",
     "build": "gatsby build",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
@@ -23,15 +24,21 @@
     "gatsby-plugin-apollo": "^3.0.1",
     "gatsby-plugin-less": "^3.0.21",
     "gatsby-plugin-material-ui": "^2.1.6",
+    "gatsby-plugin-sass": "^2.3.13",
     "gatsby-plugin-static-folders": "^1.0.1",
     "gatsby-source-github": "^0.0.2",
     "gatsby-source-github-api": "^0.2.1",
+    "gatsby-source-github-issue": "^1.0.4",
     "gatsby-source-graphql": "^2.7.1",
     "gatsby-theme-chaton": "*",
     "less": "^3.11.1",
+    "markdown-to-jsx": "^7.0.0",
     "moment": "^2.24.0",
+    "node-sass": "^4.14.1",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react-dom": "^16.11.0",
+    "reading-time": "^1.2.0",
+    "speakingurl": "^14.0.1"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
